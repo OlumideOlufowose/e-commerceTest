@@ -2,7 +2,7 @@ describe('E-commerce Site Testing', () =>
   {
       before(() => {
       // Visit website
-          cy.visit('https://www.jumia.com');
+          cy.visit('https://www.jumia.com.ng');
       });
 
       it("add product to cart", {retries: 2}, () => {
