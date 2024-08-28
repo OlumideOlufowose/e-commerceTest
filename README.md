@@ -1,5 +1,5 @@
-This is a project to perform an automation test on an E-commerce web application by writing test suites using Cypress as testing framework
-The following key modules/pages are automated:
+This is a automation script to perform a smoke test on an E-commerce web application using Cypress as testing framework.
+The following key functionality are automated:
 
 - Search for Product
 - Add to Cart
