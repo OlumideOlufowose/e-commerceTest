@@ -1,4 +1,4 @@
-This is a project to perform an automation test on a E-commerce web application by writing test suites using Cypress as testing framework
+This is a project to perform an automation test on an E-commerce web application by writing test suites using Cypress as testing framework
 The following key modules/pages are automated:
 
 - Search for Product
