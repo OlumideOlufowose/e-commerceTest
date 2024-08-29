@@ -9,11 +9,7 @@ on:
 
 jobs:
   cypress-run:
-    runs-on: ${{matrix.os}}
-
-    strategy:
-      matrix:
-        os: [macOS-latest]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -28,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Set up Cypress
-        run: npm install cypress --sav -dev
+        run: npm install cypress
 
       - name: Run Cypress tests
         run: npx cypress run

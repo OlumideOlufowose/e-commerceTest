@@ -1,30 +1,43 @@
-describe('E-commerce Site Testing', () => 
+import homePage from "../PageObjects/homepage";
+
+describe('E-Commerce Web App Testing', () => {
+
+  before(() => 
   {
-      before(() => {
-      // Visit website
-          cy.visit('https://www.jumia.com.ng');
-      });
-
-      it("add product to cart", {retries: 2}, () => {
           
-        // Locate search box and search for product
-        cy.log("Locate search box and search for product");
-        cy.get("#fi-q").should('be.visible').type("bag");
-        cy.get('.btn._prim._md.-mls.-fsh0').should('be.visible').click();
+    cy.fixture("homepage").then((page_data) => {
+    const test = new homePage()
 
-        // Add product to cart
-        cy.log("Add Product to cart")
-        cy.get(".img[data-src='https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/64/950456/1.jpg?0716']").click();
-        cy.get("#add-to-cart > button").should('have.text',"Add to cart").click();
+    // Visit website
+    cy.log("Visit website")
+    test.visitPageURL(page_data.URL)
 
-        // Proceed to checkout
-        cy.log("Proceed to checkout")
-        cy.get(".-df.-i-ctr.-gy9.-hov-or5.-phs.-fs16").should('be.visible').click();
-        cy.get("#jm > header > section > div.col.-df.-j-bet.-m.-phn.-i-ctr > a").should('be.visible').click()
-        cy.get("#jm > main > div > div.col4 > div > article > div.-fs0.-pas.-bt > a").should('be.visible').click()
-        cy.get('#identification-form > div.ctx-identification.flow-layout > div.center > h2').should('have.text', "Welcome to Jumia")
-
-      })
-
-
+    })    
   });
+
+  it("add product to cart", {retries: 2}, () => 
+  {
+          
+    cy.fixture("homepage").then((page_data) => {
+    const test = new homePage()
+
+    // Locate search box and search for product
+    cy.log("Locate search box and search for product");
+    test.searchBox(page_data.productName)
+    test.clickSearchBtn()
+
+    // Add product to cart
+    cy.log("Add Product to cart")
+    test.selectProduct()
+    test.addProductToCart(page_data.AddToCartBtnLbl)
+    cy.wait(2000)
+
+    // Proceed to checkout
+    cy.log("Proceed to checkout")
+    test.clickCart()
+    test.clickCheckOut()
+    test.validateLoginPage(page_data.LoginPageMsg)
+
+    })
+  })
+});
