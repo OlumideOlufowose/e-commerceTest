@@ -1,4 +1,4 @@
-This is a automation script to perform a smoke test on an E-commerce web application using Cypress as testing framework.
+This is a Cypress automated testing script to perform a smoke test on an E-commerce web application and integrating the test into Github Action CI/CD pipeline.
 The following key functionality are automated:
 
 - Search for Product
@@ -6,9 +6,9 @@ The following key functionality are automated:
 - Checkout
 
 Technology:
-Tool: Cypress
-IDE: Visual Studio Code
-Language: Javascript
+- Tool: Cypress
+- IDE: Visual Studio Code
+- Language: Javascript
 
 Prerequisite:
 * Install Node.js
