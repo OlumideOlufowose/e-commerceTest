@@ -1,6 +1,6 @@
 # This workflow will run Cypress automation tests on every push to the main/dev branch
 
-name: Cypress Tests
+name: E-commerce Web App Tests
 
 on:
   push:

@@ -1,6 +1,6 @@
 {
-  "URL": "https://www.jumia.com.ng",
+  "url": "https://www.jumia.com.ng",
   "productName": "bag",
-  "LoginPageMsg": "Welcome to Jumia",
-  "AddToCartBtnLbl": "Add to cart"
+  "loginPageMsg": "Welcome to Jumia",
+  "addToCartBtnLbl": "Add to cart"
 }

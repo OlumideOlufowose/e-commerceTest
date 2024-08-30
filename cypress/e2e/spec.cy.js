@@ -1,6 +1,6 @@
 import homePage from "../PageObjects/homepage";
 
-describe('E-Commerce Web App Testing', () => {
+describe('E-Commerce Web App Smoke Testing', () => {
 
   before(() => 
   {
@@ -10,12 +10,12 @@ describe('E-Commerce Web App Testing', () => {
 
     // Visit website
     cy.log("Visit website")
-    test.visitPageURL(page_data.URL)
+    test.visitPageURL(page_data.url)
 
     })    
   });
 
-  it("add product to cart", {retries: 2}, () => 
+  it("Add to cart and checkout", {retries: 2}, () => 
   {
           
     cy.fixture("homepage").then((page_data) => {
@@ -29,14 +29,14 @@ describe('E-Commerce Web App Testing', () => {
     // Add product to cart
     cy.log("Add Product to cart")
     test.selectProduct()
-    test.addProductToCart(page_data.AddToCartBtnLbl)
+    test.addProductToCart(page_data.addToCartBtnLbl)
     cy.wait(2000)
 
     // Proceed to checkout
     cy.log("Proceed to checkout")
     test.clickCart()
     test.clickCheckOut()
-    test.validateLoginPage(page_data.LoginPageMsg)
+    test.validateLoginPage(page_data.loginPageMsg)
 
     })
   })

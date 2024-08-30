@@ -9,9 +9,9 @@ class homePage
     btnCheckOut="#jm > main > div > div.col4 > div > article > div.-fs0.-pas.-bt > a";
     txtOnLoginPage='#identification-form > div.ctx-identification.flow-layout > div.center > h2';
 
-    visitPageURL(URL)
+    visitPageURL(url)
     {
-        cy.visit(URL);
+        cy.visit(url);
     }
 
     searchBox(productName)
@@ -29,9 +29,9 @@ class homePage
         cy.get(this.itmProduct).should("be.visible").click();
     }
 
-    addProductToCart(AddToCartBtnLbl)
+    addProductToCart(addToCartBtnLbl)
     {
-        cy.get(this.btnAddToCart).should('have.text', AddToCartBtnLbl).click();
+        cy.get(this.btnAddToCart).should('have.text', addToCartBtnLbl).click();
     }
 
     clickCart()
@@ -44,9 +44,9 @@ class homePage
         cy.get(this.btnCheckOut).should('be.visible').click()
     }
 
-    validateLoginPage(LoginPageMsg)
+    validateLoginPage(loginPageMsg)
     {
-        cy.get(this.txtOnLoginPage).should('have.text', LoginPageMsg)
+        cy.get(this.txtOnLoginPage).should('have.text', loginPageMsg)
 
     }
     
