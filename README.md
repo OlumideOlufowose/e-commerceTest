@@ -21,3 +21,11 @@ Prerequisite:
 * Select E2E testing
 * Select Chrome browser
 * Double click on the automation test script file named "spec.cy.js" to start running automation test.
+
+To run automated test on Github Action CI/CD:
+- Clone this project and unzip it.
+- Copy all content to local repository
+- Add all content to index/staging
+- Commit changes
+- Push to your Github repository
+- Check your Github Action tab to view automated test run and test result.
